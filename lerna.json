@@ -1,0 +1,313 @@
+{
+  "$schema": "https://json.schemastore.org/lerna",
+  "version": "independent",
+  "npmClient": "pnpm",
+  "useWorkspaces": true,
+  "stream": true,
+  "packages": [
+    "packages/*",
+    "services/*",
+    "apps/*",
+    "tools/*"
+  ],
+  "ignoreChanges": [
+    "**/*.md",
+    "**/*.test.{ts,tsx,js,jsx}",
+    "**/*.spec.{ts,tsx,js,jsx}",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/*.stories.{ts,tsx,js,jsx}",
+    "**/storybook/**",
+    "**/.storybook/**",
+    "**/docs/**",
+    "**/README.md",
+    "**/CHANGELOG.md",
+    "**/LICENSE",
+    "**/.eslintrc.*",
+    "**/prettier.config.*",
+    "**/jest.config.*",
+    "**/tsconfig.json",
+    "**/.gitignore",
+    "**/.dockerignore",
+    "**/docker-compose*.yml",
+    "**/Dockerfile*",
+    "infrastructure/**",
+    "deployment/**",
+    "monitoring/**",
+    "scripts/**",
+    "tools/dev/**"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish packages [skip ci]",
+      "registry": "https://npm.pkg.github.com",
+      "access": "restricted",
+      "createRelease": "github",
+      "yes": false,
+      "exact": true,
+      "gitReset": false,
+      "allowBranch": [
+        "main",
+        "release/*",
+        "hotfix/*"
+      ],
+      "ignoreScripts": false,
+      "contents": "dist",
+      "bump": "from-git",
+      "preid": "beta",
+      "distTag": "latest",
+      "verifyAccess": true,
+      "verifyRegistry": true,
+      "includeMergedTags": false,
+      "skipUnchanged": true,
+      "requireScripts": false,
+      "tagVersionPrefix": "v",
+      "granularPathspec": true
+    },
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): version packages",
+      "allowBranch": [
+        "main",
+        "release/*",
+        "hotfix/*"
+      ],
+      "exact": true,
+      "gitRemote": "origin",
+      "signGitCommit": true,
+      "signGitTag": true,
+      "forcePublish": false,
+      "createRelease": "github",
+      "releaseNotes": true,
+      "changelog": {
+        "repo": "datasphere-org/datasphere-guilds",
+        "cacheDir": ".changelog",
+        "labels": {
+          "Type: Breaking Change": ":boom: Breaking Change",
+          "Type: Feature": ":rocket: New Feature",
+          "Type: Bug Fix": ":bug: Bug Fix",
+          "Type: Enhancement": ":nail_care: Enhancement",
+          "Type: Documentation": ":memo: Documentation",
+          "Type: Housekeeping": ":house: Internal",
+          "Type: Security": ":lock: Security"
+        }
+      },
+      "conventionalGraduate": true,
+      "conventionalPrerelease": [
+        "*"
+      ],
+      "changelogPreset": {
+        "name": "conventional-changelog-conventionalcommits",
+        "issueUrlFormat": "https://github.com/datasphere-org/datasphere-guilds/issues/{{id}}",
+        "compareUrlFormat": "https://github.com/datasphere-org/datasphere-guilds/compare/{{previousTag}}...{{currentTag}}",
+        "commitUrlFormat": "https://github.com/datasphere-org/datasphere-guilds/commit/{{hash}}",
+        "userUrlFormat": "https://github.com/{{user}}"
+      }
+    },
+    "bootstrap": {
+      "ignore": [
+        "@datasphere/docs",
+        "@datasphere/examples"
+      ],
+      "npmClientArgs": [
+        "--no-package-lock",
+        "--prefer-offline",
+        "--progress=false"
+      ],
+      "ci": true,
+      "hoist": true,
+      "strict": true,
+      "rejectCycles": true
+    },
+    "exec": {
+      "parallel": true,
+      "stream": true,
+      "bail": false,
+      "concurrency": 4
+    },
+    "run": {
+      "parallel": true,
+      "stream": true,
+      "npmClient": "pnpm",
+      "rejectCycles": true,
+      "sort": true
+    },
+    "create": {
+      "homepage": "https://github.com/datasphere-org/datasphere-guilds",
+      "license": "PROPRIETARY",
+      "registry": "https://npm.pkg.github.com",
+      "access": "restricted"
+    },
+    "diff": {
+      "ignoreChanges": [
+        "**/*.md",
+        "**/test/**",
+        "**/*.test.*",
+        "**/*.spec.*"
+      ]
+    },
+    "ls": {
+      "json": true,
+      "all": false,
+      "long": true,
+      "parseable": false,
+      "toposort": true,
+      "graph": false
+    },
+    "clean": {
+      "yes": false,
+      "parallel": true
+    },
+    "import": {
+      "preserve-commit": true,
+      "flatten": false,
+      "yes": false
+    },
+    "link": {
+      "forceLocal": true
+    },
+    "add": {
+      "exact": true,
+      "dev": false,
+      "peer": false
+    }
+  },
+  "granularPathspec": true,
+  "loglevel": "info",
+  "progress": true,
+  "sort": true,
+  "concurrency": 4,
+  "rejectCycles": true,
+  "includeMergedTags": false,
+  "changelog": {
+    "repo": "datasphere-org/datasphere-guilds",
+    "labels": {
+      "Type: Breaking Change": ":boom: Breaking Change",
+      "Type: Feature": ":rocket: New Feature", 
+      "Type: Bug Fix": ":bug: Bug Fix",
+      "Type: Enhancement": ":nail_care: Enhancement",
+      "Type: Documentation": ":memo: Documentation",
+      "Type: Housekeeping": ":house: Internal",
+      "Type: Security": ":lock: Security",
+      "Type: Performance": ":zap: Performance",
+      "Type: Refactor": ":recycle: Code Refactoring",
+      "Type: Test": ":white_check_mark: Tests",
+      "Type: Build": ":package: Build System",
+      "Type: CI": ":green_heart: CI/CD"
+    },
+    "cacheDir": ".changelog"
+  },
+  "$lerna": {
+    "extends": [
+      "@lerna/project-config"
+    ]
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "services/*", 
+      "apps/*",
+      "tools/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/@react-native-*/**",
+      "**/expo",
+      "**/expo/**",
+      "**/@expo/**",
+      "**/metro*",
+      "**/metro*/**"
+    ]
+  },
+  "conventionalCommits": {
+    "types": {
+      "feat": {
+        "description": "A new feature",
+        "title": "Features",
+        "semverBump": "minor"
+      },
+      "fix": {
+        "description": "A bug fix",
+        "title": "Bug Fixes", 
+        "semverBump": "patch"
+      },
+      "docs": {
+        "description": "Documentation only changes",
+        "title": "Documentation",
+        "semverBump": false
+      },
+      "style": {
+        "description": "Changes that do not affect the meaning of the code",
+        "title": "Styles",
+        "semverBump": false
+      },
+      "refactor": {
+        "description": "A code change that neither fixes a bug nor adds a feature",
+        "title": "Code Refactoring",
+        "semverBump": "patch"
+      },
+      "perf": {
+        "description": "A code change that improves performance",
+        "title": "Performance Improvements",
+        "semverBump": "patch"
+      },
+      "test": {
+        "description": "Adding missing tests or correcting existing tests",
+        "title": "Tests",
+        "semverBump": false
+      },
+      "build": {
+        "description": "Changes that affect the build system or external dependencies",
+        "title": "Build System",
+        "semverBump": "patch"
+      },
+      "ci": {
+        "description": "Changes to CI configuration files and scripts",
+        "title": "Continuous Integration",
+        "semverBump": false
+      },
+      "chore": {
+        "description": "Other changes that don't modify src or test files",
+        "title": "Chores",
+        "semverBump": false
+      },
+      "revert": {
+        "description": "Reverts a previous commit",
+        "title": "Reverts",
+        "semverBump": "patch"
+      },
+      "security": {
+        "description": "A security improvement",
+        "title": "Security",
+        "semverBump": "patch"
+      }
+    },
+    "releaseRules": [
+      { "type": "feat", "release": "minor" },
+      { "type": "fix", "release": "patch" },
+      { "type": "perf", "release": "patch" },
+      { "type": "refactor", "release": "patch" },
+      { "type": "security", "release": "patch" },
+      { "type": "revert", "release": "patch" },
+      { "type": "build", "scope": "deps", "release": "patch" },
+      { "breaking": true, "release": "major" },
+      { "scope": "no-release", "release": false }
+    ],
+    "parserOpts": {
+      "noteKeywords": [
+        "BREAKING CHANGE",
+        "BREAKING CHANGES",
+        "BREAKING"
+      ]
+    }
+  },
+  "lernaVersion": "8.0.2"
+} 

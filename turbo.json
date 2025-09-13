@@ -1,0 +1,52 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "package.json",
+    "lerna.json", 
+    "nx.json",
+    "tsconfig.json",
+    ".eslintrc.js",
+    "jest.config.js",
+    "babel.config.js",
+    ".prettierrc",
+    ".env.example",
+    "docker-compose.yml",
+    "docker-compose.*.yml",
+    "Dockerfile",
+    "Dockerfile.*",
+    "infrastructure/terraform/**",
+    "infrastructure/kubernetes/**",
+    ".github/workflows/**"
+  ],
+  "globalEnv": [
+    "NODE_ENV",
+    "CI"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".next/**"
+      ],
+      "cache": true
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**"],
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "type-check": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  }
+}

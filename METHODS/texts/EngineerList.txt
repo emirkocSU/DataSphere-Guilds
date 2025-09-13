@@ -1,0 +1,117 @@
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Görev Kural Seti Hazırlama	• Task guideline dokümanı, sınıf ontolojisi
+• Örnek “golden” etiketler	Google Docs / Markdown repo	No‑code
+2️⃣ Arayüz Kurulumu	• Label Studio, CVAT, Encord kurulum (Docker)	Docker‑Compose, Helm	Junior: temel YAML/Python
+3️⃣ Ön‑Etiketleme (opsiyonel)	• YOLOv8, Whisper, spaCy ile otomatik öneri çıkarma	Python scripts, NVIDIA GPU	Kod
+4️⃣ İnsan Etiketleme	• Mikrogörev akışı (≤ 30 sn resim/15 sn ses)
+• 3‑lü çoğul etiket, majority voting	DataSphere task portal	No‑code
+5️⃣ Kalite Kontrol	• Honeypot & consensus testleri
+• Inter‑annotator agreement (Cohen κ)	Python pandas/jupyter QC script	Kod
+6️⃣ İmza/Versiyonlama	• DVC + Git LFS ile dataset sürümle	CLI + .gitlab‑CI	Intermediate
+
+### 2. Model Evaluation & Testing
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Test Set Tasarımı	• Static benchmark (e.g. MMLU slice)
+• Synthetic edge‑case üreteci	OpenAI evals, Llama‑Index query generator	Junior: prompt templating
+2️⃣ Otomatik Ölçüm	• BLEU/F1/Rouge, Toxicity score, Latency log	Eleuther eval‑harness, JMeter	Kod
+3️⃣ İnsan Hakem Paneli	• Likert 1‑5 puanlı UX formu	DataSphere review UI	No‑code
+4️⃣ Regression CI	• Her model sürümünde pytest‑style assert	GitHub Actions, pytest	Intermediate
+5️⃣ Raporlama	• Eval sonuçlarını Superset/Metabase dashboard	SQL, Grafana	Kod
+
+### 3. Prompt Engineering & Optimization
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Zero‑/Few‑Shot Denemeleri	• Prompt matrix (role + style + constraint)	Google Sheets / Prompt Flow	No‑code
+2️⃣ Chain‑of‑Thought Refaktör	• “Think step‑by‑step”, ReACT teknikleri	Python prompt wrapper	Kod
+3️⃣ A/B Scoring	• Auto‑eval (gpt‑judge) + human rank mix	openai function calls	Junior
+4️⃣ Prompt Template API	• Jinja2 templating, parametrik prompt SDK	FastAPI microservice	Intermediate
+5️⃣ Prompt Vault	• “Best Prompt” sürümleme, embedding arama	Weaviate / Chroma	Kod
+
+### 4. Custom Fine‑Tuning & Domain Adaptation
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Veri Hazırlama	• Deduplication, token filtering	Python datasets, pandas	Junior
+2️⃣ LoRA/QLoRA Training	• HuggingFace PEFT + bitsandbytes	AWS GPU, HF trainer	Intermediate
+3️⃣ Hyper‑param Sweep	• Weights & Biases sweep agents	W&B dashboard	Kod
+4️⃣ Eval & Safety Gate	• Custom eval set + red‑team prompts	OpenAI evals	Intermediate
+5️⃣ Model Paketleme	• GGUF/Q8 quantize → Edge deploy	llama‑cpp‑python	Senior
+
+### 5. MLOps & Deployment
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Containerization	• Dockerfile + multi‑stage build	Docker, NVIDIA‑CUDA base	Junior
+2️⃣ CI/CD Pipeline	• GitHub Actions → ECR → K8s rollout	Argo CD / Helm	Intermediate
+3️⃣ Inference API	• FastAPI / Triton server + autoscale	KEDA, Prometheus	Kod
+4️⃣ Monitoring & Drift	• Evidently, MLflow model registry	Grafana alerts	Senior
+5️⃣ Rollback & Shadow Test	• Canary deploy + feature flag	Flipt / FlagD	Intermediate
+
+### 6. Rapid Pipeline Debugging (SRE‑for‑ML)
+
+Adım	Yöntem	Araç	Kod Gereksinimi
+1️⃣ Log Aggregation	• OpenTelemetry, ELK stack	Kibana	Intermediate
+2️⃣ Real‑Time Trace	• Jaeger span → slow step izolasyonu	Jaeger UI	Kod
+3️⃣ Root‑Cause Patch	• Hot‑fix Python notebook veya Bash	kubectl exec	Junior
+4️⃣ Chaos Drill	• Data null‑value injection, pod term.	LitmusChaos	Senior
+5️⃣ Post‑Mortem Doc	• Blameless RCA template	Confluence	No‑code
+
+### 7. AI Ethics & Bias Audit
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Dataset Demografi Analizi	• faceted sampling, representation heatmap	Pandas, Seaborn	Junior
+2️⃣ Fairness Metric	• Equal Opportunity Δ, Demographic Parity	AIF360, Fairlearn	Intermediate
+3️⃣ PII Scrub & Policy Match	• Regex + Presidio, manual review	Presidio CLI	Kod+No‑code
+4️⃣ Mitigation Loop	• Reweight, counterfactual data synth.	Python	Senior
+5️⃣ Stakeholder Review	• Multidisipliner onay oturumu	Zoom + DataSphere portal	No‑code
+
+### 8. AI Red‑Teaming & Safety Testing
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Threat Model Canvas	• STRIDE + AI‑specific misuse cases	Miro template	No‑code
+2️⃣ Manual Jailbreak	• Adversarial prompt library, exploit share	DataSphere chat UI	No‑code
+3️⃣ Automated Fuzzing	• Auto‑prompt‑inject, language attacks	SecGPT / PromptInject	Intermediate
+4️⃣ Safety Scorecard	• OpenAI policy checker, toxicity API	Perspective API	Junior
+5️⃣ Patch & Retest	• System message hardening, tool call limits	Code / prompt edits	Intermediate
+
+### 9. Human‑in‑the‑Loop Monitoring & Quality Control
+
+Adım	Yöntem	Araç / Framework	Kod Gereksinimi
+1️⃣ Live Sampling	• Routing % X output to human queue	DataSphere routing rules	No‑code
+2️⃣ Triaging UI	• Annotator tags: correct / needs‑fix / unsafe	Vue/React frontend	Junior (frontend)
+3️⃣ Feedback Integration	• Logged corrections → RLHF dataset	Kafka → S3	Intermediate
+4️⃣ Drift Alert	• Stat. test (KL‑divergence) vs baseline	Evidently	Kod
+5️⃣ Periodic Retrain Trigger	• Airflow DAG with human‑approved data	Airflow	Intermediate
+
+## Nasıl Kullanılır? (Özet Akış)
+
+Görev Tanımı → İşveren portalından “Fine‑Tune a Legal LLM” veya “Red‑Team Chatbot” gibi modüler sprint açılır.
+
+Yöntem Seti → Yukarıdaki tablolar, mühendis alt‑task’larını ve gereken aracı doğrudan iş emri olarak sunar.
+
+Rol Eşleştirme → Junior, Intermediate, Senior etiketleriyle otomatik eşleşme; kodlu‑kodsuz yetenek seçeceği.
+
+Kalite Sigortası → Her görev zinciri QC Check‑points içerir (honeypot, peer‑review, metric gate).
+
+Ödeme & Reputasyon → Milestone tamamlandıkça mikropayment; “Guild Rank” skoru ile kariyer ilerleme.
+
+Sonuç: Bu yöntem tabloları sayesinde DataSphere Guilds, mühendislerin gerçek iş akışı ve araç düzeyi detaylarını eksiksiz karşılar; hem yeni mezun hem kıdemli mühendisler için yüksek talep boşluklarını dolduran, ölçeklenebilir ve kârlı hizmet portföyünü “product‑ready” hâle getirir.
+
+
+Yeni Yöntem	Ne Yapar?	Araç / Framework	Kod Gereksinimi
+ A1	Synthetic‑Data Generator Tuning	Gerçek veriyi gizlilik kaybı olmadan çoğaltmak için GAN/LLM tabanlı sentetik veri pipeline’ı kurar, parametre optimizasyonu yapar.	SDV, GPT‑4 Turbo, TabDDPM, Copulas	Intermediate
+
+ A2	Model Compression & Edge Quantization	8‑bit / 4‑bit quantize, distillation veya pruning ile modeli mobil/edge’e indirir; latency & RAM düşürür.	GGUF, bitsandbytes, TensorRT‑LLM	Senior
+
+ A3	Explainability Dashboard Build	SHAP/Integrated Gradients skorlarını gerçek‑zaman gösteren Streamlit / React dashboard üretir.	SHAP, Captum, Streamlit	Junior–Inter.
+
+ A4	Vector‑DB Schema & RAG Pipeline Hardening	K‑Nearest Neighbor hatalarını azaltmak için embedding normalizasyonu, chunk overlap tuning, hybrid BM25+Vector arama kurar.	Llama‑Index, Weaviate, Qdrant	Intermediate
+
+ A5	LLM Guardrail DSL Implementasyonu	DSL (Guardrails.ai, Rebuff) ile içerik kısıtları tanımlar; prod API’ye bağlayıp policy‑as‑code testleri yazar.	Guardrails, OpenAI functions	Junior–Inter.
+
+ A6	Multilingual Alignment & Localization QA	 LLM cevaplarını 10+ dilde kontrol eder; terminoloji sözlüğüne göre otomatik‑&‑human çeviri tutarlılığı sağlar.	polyglot, LangChain, DeepL API	No‑code + Python
+ A7	Hardware‑Aware Model Profiling	CPU/GPU/TPU ops sayacıyla “hot op” bulunur, kernel fusion veya Flash‑Attention v2 patchlenir.	NVIDIA Nsight, PyTorch profiler	Senior
+
+ A8	Continuous Synthetic Monitoring Bots	Prod’da her 1 dk’da bir test prompt gönderip latency/quality loglar; anomaliyi Slack alerti basar.	Locust, Grafana Loki, Slack Webhook	Intermediate
+ A9	Knowledge‑Graph Curation & Link Fix	Çiğ metni triples’a dönüştürür, entity dedup, ontoloji align; KG’ye (Neo4j) yükler.	spaCy NER, OpenIE6, Neo4j ETL	Intermediate
+
+ A10	Privacy‑Preserving Feature Synthesis	Federated Learning simülasyonu veya DP‑SGD ile epsilon < 5 gizlilik hedefli tablo üretir.	Opacus, Flower, PySyft	Senior

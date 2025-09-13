@@ -1,0 +1,439 @@
+{
+  "expo": {
+    "name": "DataSphere Guilds",
+    "slug": "datasphere-guilds",
+    "owner": "datasphere-org",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "datasphereguilds",
+    "userInterfaceStyle": "automatic",
+    "icon": "./src/assets/images/logo.png",
+    "platforms": ["ios", "android", "web"],
+    "githubUrl": "https://github.com/datasphere-org/datasphere-guilds",
+    "primaryColor": "#2E7D32",
+    "backgroundColor": "#FFFFFF",
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "splash": {
+      "image": "./src/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 30000,
+      "url": "https://u.expo.dev/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    },
+    "assetBundlePatterns": [
+      "src/assets/images/**/*",
+      "src/assets/fonts/**/*"
+    ],
+    "locales": {
+      "en": "./src/i18n/en.json"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0",
+            "minSdkVersion": 21,
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "useLegacyPackaging": false
+          },
+          "ios": {
+            "deploymentTarget": "13.0",
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "DataSphere Guilds needs camera access to capture images for data collection tasks.",
+          "microphonePermission": "DataSphere Guilds needs microphone access to record audio for voice-based tasks.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "DataSphere Guilds needs location access to verify GPS-based tasks and provide location-specific data collection opportunities.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "DataSphere Guilds needs access to your photos to upload images for tasks.",
+          "savePhotosPermission": "DataSphere Guilds needs permission to save photos to your device.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./src/assets/images/notification-icon.png",
+          "color": "#2E7D32",
+          "defaultChannel": "default",
+          "sounds": ["./src/assets/sounds/notification.wav"],
+          "androidMode": "default",
+          "androidCollapsedTitle": "#{unread_notifications} new notifications"
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "DataSphere Guilds uses Face ID / Touch ID for secure authentication."
+        }
+      ],
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "This identifier will be used to deliver personalized task recommendations and improve your experience."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      [
+        "@react-native-firebase/app",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "expo-apple-authentication",
+        {
+          "appleTeamId": "XXXXXXXXXX"
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "DataSphere Guilds needs microphone access to record audio tasks."
+        }
+      ],
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "datasphere-org",
+          "project": "datasphere-guilds",
+          "url": "https://sentry.io/"
+        }
+      ],
+      "expo-localization",
+      "expo-secure-store",
+      "expo-haptics",
+      "expo-network",
+      "expo-device",
+      "expo-application",
+      "expo-constants",
+      "expo-file-system",
+      "expo-font",
+      "expo-keep-awake",
+      "expo-screen-orientation",
+      "expo-status-bar",
+      "expo-system-ui",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "tsconfigPaths": true,
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "cli": {
+          "version": ">= 5.0.0",
+          "requireCommit": true,
+          "appVersionSource": "remote"
+        }
+      },
+      "bugsnag": {
+        "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "oneSignal": {
+        "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      },
+      "mixpanel": {
+        "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "amplitude": {
+        "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "segment": {
+        "writeKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "router": {
+        "origin": false
+      },
+      "proguardRules": "-keep class com.yourcompany.** { *; }"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "datasphere-org",
+            "project": "datasphere-guilds"
+          }
+        }
+      ]
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "ios": {
+      "bundleIdentifier": "com.datasphere.guilds",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "requireFullScreen": false,
+      "userInterfaceStyle": "automatic",
+      "icon": "./src/assets/images/ios-icon.png",
+      "splash": {
+        "image": "./src/assets/images/ios-splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#FFFFFF",
+        "tabletImage": "./src/assets/images/ios-splash-tablet.png"
+      },
+      "infoPlist": {
+        "CFBundleDisplayName": "DataSphere",
+        "CFBundleDevelopmentRegion": "en",
+        "ITSAppUsesNonExemptEncryption": false,
+        "LSRequiresIPhoneOS": true,
+        "UIBackgroundModes": ["location", "fetch", "remote-notification", "audio"],
+        "UIRequiresFullScreen": false,
+        "UIStatusBarStyle": "default",
+        "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
+        "UILaunchStoryboardName": "SplashScreen",
+        "UIRequiredDeviceCapabilities": ["armv7"],
+        "NSCameraUsageDescription": "DataSphere Guilds needs camera access to capture images for data collection tasks.",
+        "NSLocationWhenInUseUsageDescription": "DataSphere Guilds needs location access to verify GPS-based tasks.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "DataSphere Guilds needs location access to provide location-based task notifications.",
+        "NSLocationAlwaysUsageDescription": "DataSphere Guilds needs background location to track task locations.",
+        "NSMicrophoneUsageDescription": "DataSphere Guilds needs microphone access to record audio tasks.",
+        "NSPhotoLibraryUsageDescription": "DataSphere Guilds needs photo library access to select images for tasks.",
+        "NSPhotoLibraryAddUsageDescription": "DataSphere Guilds needs permission to save images to your photo library.",
+        "NSMotionUsageDescription": "DataSphere Guilds uses motion data to verify physical activities in tasks.",
+        "NSFaceIDUsageDescription": "DataSphere Guilds uses Face ID for secure authentication.",
+        "NSContactsUsageDescription": "DataSphere Guilds needs contacts access to help you invite team members.",
+        "NSCalendarsUsageDescription": "DataSphere Guilds needs calendar access to schedule task reminders.",
+        "NSRemindersUsageDescription": "DataSphere Guilds needs reminders access to set task deadlines.",
+        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized task recommendations.",
+        "NSBluetoothAlwaysUsageDescription": "DataSphere Guilds uses Bluetooth to connect with data collection devices.",
+        "NSBluetoothPeripheralUsageDescription": "DataSphere Guilds uses Bluetooth to communicate with peripherals.",
+        "NSSpeechRecognitionUsageDescription": "DataSphere Guilds uses speech recognition for voice-based data tasks.",
+        "NSHealthShareUsageDescription": "DataSphere Guilds reads health data for health-related research tasks.",
+        "NSHealthUpdateUsageDescription": "DataSphere Guilds updates health data based on your task activities.",
+        "NSAppleMusicUsageDescription": "DataSphere Guilds needs music library access for audio analysis tasks."
+      },
+      "entitlements": {
+        "com.apple.developer.applesignin": ["Default"],
+        "com.apple.developer.associated-domains": ["applinks:app.datasphereguilds.com"],
+        "com.apple.developer.push-notifications": ["development", "production"],
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.background-delivery": true,
+        "aps-environment": "production"
+      },
+      "associatedDomains": [
+        "applinks:app.datasphereguilds.com",
+        "applinks:*.datasphereguilds.com",
+        "webcredentials:app.datasphereguilds.com"
+      ],
+      "usesIcloudStorage": true,
+      "usesAppleSignIn": true,
+      "accessesContactNotes": false,
+      "config": {
+        "usesNonExemptEncryption": false,
+        "googleMapsApiKey": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.XXXXXXXXXXXX"
+        },
+        "branch": {
+          "apiKey": "key_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        },
+        "facebook": {
+          "appId": "XXXXXXXXXXXXXXXXX",
+          "displayName": "DataSphere Guilds",
+          "scheme": "fbXXXXXXXXXXXXXXXXX",
+          "autoLogEvents": false,
+          "advertiserIDCollectionEnabled": false
+        }
+      }
+    },
+    "android": {
+      "package": "com.datasphere.guilds",
+      "versionCode": 1,
+      "icon": "./src/assets/images/android-icon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/adaptive-icon-foreground.png",
+        "backgroundImage": "./src/assets/images/adaptive-icon-background.png",
+        "monochromeImage": "./src/assets/images/adaptive-icon-monochrome.png"
+      },
+      "splash": {
+        "image": "./src/assets/images/android-splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#FFFFFF",
+        "mdpi": "./src/assets/images/android-splash-mdpi.png",
+        "hdpi": "./src/assets/images/android-splash-hdpi.png",
+        "xhdpi": "./src/assets/images/android-splash-xhdpi.png",
+        "xxhdpi": "./src/assets/images/android-splash-xxhdpi.png",
+        "xxxhdpi": "./src/assets/images/android-splash-xxxhdpi.png"
+      },
+      "userInterfaceStyle": "automatic",
+      "jsEngine": "hermes",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET",
+        "SYSTEM_ALERT_WINDOW",
+        "VIBRATE",
+        "READ_PHONE_STATE",
+        "USE_FINGERPRINT",
+        "USE_BIOMETRIC",
+        "FOREGROUND_SERVICE",
+        "WAKE_LOCK",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "android.permission.SCHEDULE_EXACT_ALARM"
+      ],
+      "blockedPermissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.WRITE_CONTACTS",
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "app.datasphereguilds.com",
+              "pathPrefix": "/"
+            },
+            {
+              "scheme": "datasphereguilds"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "allowBackup": false,
+      "softwareKeyboardLayoutMode": "pan",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        },
+        "googleSignIn": {
+          "apiKey": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "certificateHash": "XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX"
+        },
+        "facebook": {
+          "appId": "XXXXXXXXXXXXXXXXX",
+          "displayName": "DataSphere Guilds",
+          "scheme": "fbXXXXXXXXXXXXXXXXX",
+          "autoLogEvents": false,
+          "advertiserIDCollectionEnabled": false
+        },
+        "branch": {
+          "apiKey": "key_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./src/assets/images/favicon.png",
+      "splash": {
+        "image": "./src/assets/images/web-splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#FFFFFF"
+      },
+      "themeColor": "#2E7D32",
+      "backgroundColor": "#FFFFFF",
+      "crossorigin": "use-credentials",
+      "description": "DataSphere Guilds - Be the boss of your own data business",
+      "dir": "auto",
+      "display": "standalone",
+      "lang": "en",
+      "name": "DataSphere Guilds",
+      "orientation": "portrait",
+      "preferRelatedApplications": true,
+      "relatedApplications": [
+        {
+          "platform": "play",
+          "url": "https://play.google.com/store/apps/details?id=com.datasphere.guilds",
+          "id": "com.datasphere.guilds"
+        },
+        {
+          "platform": "itunes",
+          "url": "https://apps.apple.com/app/datasphere-guilds/idXXXXXXXXXX"
+        }
+      ],
+      "scope": "/",
+      "shortcuts": [
+        {
+          "name": "New Task",
+          "short_name": "Task",
+          "description": "Create a new data collection task",
+          "url": "/tasks/new",
+          "icons": [{ "src": "./src/assets/images/task-icon.png", "sizes": "96x96" }]
+        },
+        {
+          "name": "Earnings",
+          "short_name": "Earnings",
+          "description": "View your earnings",
+          "url": "/earnings",
+          "icons": [{ "src": "./src/assets/images/earnings-icon.png", "sizes": "96x96" }]
+        }
+      ],
+      "startUrl": "/",
+      "categories": ["business", "productivity", "utilities"],
+      "iarc_rating_id": "XXXXXXXXXXXX",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "authDomain": "datasphere-guilds.firebaseapp.com",
+          "projectId": "datasphere-guilds",
+          "storageBucket": "datasphere-guilds.appspot.com",
+          "messagingSenderId": "XXXXXXXXXXXX",
+          "appId": "1:XXXXXXXXXXXX:web:XXXXXXXXXXXXXXXXXXXX",
+          "measurementId": "G-XXXXXXXXXXXX"
+        }
+      }
+    },
+    "notification": {
+      "icon": "./src/assets/images/notification-icon.png",
+      "color": "#2E7D32",
+      "androidMode": "default",
+      "iosDisplayInForeground": true
+    },
+    "jsEngine": "hermes",
+    "packagerOpts": {
+      "sourceExts": ["expo.ts", "expo.tsx", "expo.js", "expo.jsx", "ts", "tsx", "js", "jsx", "json", "wasm", "svg"],
+      "config": "metro.config.js",
+      "projectRoot": "."
+    }
+  }
+}
+  

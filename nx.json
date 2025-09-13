@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "sharedGlobals": [
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/lerna.json",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/.eslintrc.js",
+      "{workspaceRoot}/jest.config.js",
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/.prettierrc",
+      "{workspaceRoot}/.env.example",
+      "{workspaceRoot}/docker-compose.yml",
+      "{workspaceRoot}/docker-compose.*.yml",
+      "{workspaceRoot}/Dockerfile",
+      "{workspaceRoot}/Dockerfile.*",
+      "{workspaceRoot}/infrastructure/terraform/**",
+      "{workspaceRoot}/infrastructure/kubernetes/**",
+      "{workspaceRoot}/.github/workflows/**",
+      {
+        "env": "NODE_ENV"
+      },
+      {
+        "env": "CI"
+      }
+    ],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ]
+  }
+}

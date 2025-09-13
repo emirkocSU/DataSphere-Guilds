@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "DataSphere Guilds - Expo React Native TypeScript Config",
+  "compilerOptions": {
+    /* ===================================
+     * Language and Environment
+     * =================================== */
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker"
+    ],
+    "jsx": "react-native",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": true,
+    
+    /* ===================================
+     * Module System
+     * =================================== */
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": false,
+    "allowArbitraryExtensions": false,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": false,
+    "forceConsistentCasingInFileNames": true,
+    
+    /* ===================================
+     * Type Checking - Strict Mode
+     * =================================== */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    
+    /* ===================================
+     * Additional Checks
+     * =================================== */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noUncheckedSideEffectImports": true,
+    "verbatimModuleSyntax": false,
+    
+    /* ===================================
+     * Emit Configuration
+     * =================================== */
+    "noEmit": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "inlineSources": false,
+    "importHelpers": true,
+    "importsNotUsedAsValues": "remove",
+    "downlevelIteration": true,
+    "emitBOM": false,
+    "newLine": "lf",
+    "stripInternal": true,
+    "noEmitHelpers": false,
+    "noEmitOnError": true,
+    "preserveWatchOutput": true,
+    "disableSizeLimit": false,
+    
+    /* ===================================
+     * JavaScript Support
+     * =================================== */
+    "allowJs": true,
+    "checkJs": false,
+    "maxNodeModuleJsDepth": 0,
+    
+    /* ===================================
+     * Editor Support
+     * =================================== */
+    "disableSolutionSearching": false,
+    "disableSourceOfProjectReferenceRedirect": false,
+    "disableReferencedProjectLoad": false,
+    
+    /* ===================================
+     * Interop Constraints
+     * =================================== */
+    "isolatedModules": true,
+    "isolatedDeclarations": false,
+    "allowUmdGlobalAccess": false,
+    "moduleSuffixes": [".native", ".ios", ".android", ".web", ""],
+    
+    /* ===================================
+     * Performance
+     * =================================== */
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    
+    /* ===================================
+     * Skip Checks
+     * =================================== */
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": true,
+    
+    /* ===================================
+     * Path Mapping
+     * =================================== */
+    "baseUrl": ".",
+    "paths": {
+      /* DataSphere Core Package */
+      "@datasphere/core/*": ["./packages/@datasphere/core/*"],
+
+      /* Source directories */
+      "@api": ["./src/api/index"],
+      "@api/*": ["./src/api/*"],
+      "@assets": ["./src/assets/index"],
+      "@assets/*": ["./src/assets/*"],
+      "@components": ["./src/components/index"],
+      "@components/*": ["./src/components/*"],
+      "@config": ["./src/config/index"],
+      "@config/*": ["./src/config/*"],
+      "@contexts": ["./src/contexts/index"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@hooks": ["./src/hooks/index"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@i18n": ["./src/i18n/index"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@models": ["./src/models/index"],
+      "@models/*": ["./src/models/*"],
+      "@navigation": ["./src/navigation/index"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@screens": ["./src/screens/index"],
+      "@screens/*": ["./src/screens/*"],
+      "@services": ["./src/services/index"],
+      "@services/*": ["./src/services/*"],
+      "@state": ["./src/state/index"],
+      "@state/*": ["./src/state/*"],
+      "@theme": ["./src/theme/index"],
+      "@theme/*": ["./src/theme/*"],
+      "@types": ["./src/types/index"],
+      "@types/*": ["./src/types/*"],
+      "@utils": ["./src/utils/index"],
+      "@utils/*": ["./src/utils/*"],
+      
+      /* Test utilities */
+      "@test-utils": ["./src/__tests__/utils/index"],
+      "@test-utils/*": ["./src/__tests__/utils/*"],
+      "@mocks": ["./src/__mocks__/index"],
+      "@mocks/*": ["./src/__mocks__/*"],
+      
+      /* Root imports */
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
+    },
+    "rootDirs": ["./src", "./"],
+    
+    /* ===================================
+     * Type Roots and Types
+     * =================================== */
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "./@types"
+    ],
+    "types": [],
+    
+    /* ===================================
+     * Advanced Options
+     * =================================== */
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    
+    /* ===================================
+     * Plugins
+     * =================================== */
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customMatcher": "\\.module\\.(css|scss|sass|less)$"
+        }
+      }
+    ]
+  },
+  
+  /* ===================================
+   * File Patterns
+   * =================================== */
+  "include": [
+    "src/**/*",
+    "src/**/*.json",
+    "App.tsx",
+    "app.tsx",
+    "index.js",
+    "index.tsx",
+    "metro.config.js",
+    "@types/**/*",
+    "**/*.d.ts"
+  ],
+  
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "jest.config.js",
+    ".eslintrc.js",
+    "coverage",
+    "dist",
+    "build",
+    ".expo",
+    ".expo-shared",
+    "web-build",
+    "ios",
+    "android",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/*.stories.tsx",
+    "**/*.stories.ts"
+  ],
+  
+  /* ===================================
+   * Project References
+   * =================================== */
+  "references": [],
+  
+  /* ===================================
+   * Watch Options
+   * =================================== */
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority",
+    "synchronousWatchDirectory": false,
+    "excludeDirectories": [
+      "**/node_modules",
+      ".expo",
+      ".expo-shared",
+      "ios",
+      "android",
+      "coverage",
+      "dist",
+      "build"
+    ],
+    "excludeFiles": []
+  },
+  
+  /* ===================================
+   * Type Acquisition
+   * =================================== */
+  "typeAcquisition": {
+    "enable": true,
+    "include": [],
+    "exclude": [],
+    "disableFilenameBasedTypeAcquisition": false
+  },
+  
+  /* ===================================
+   * TS Node Configuration
+   * =================================== */
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2022",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true
+    },
+    "require": ["tsconfig-paths/register"],
+    "transpileOnly": true,
+    "files": true,
+    "experimentalResolver": true
+  },
+  
+  /* ===================================
+   * Build Options
+   * =================================== */
+  "buildOptions": {
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    "force": false,
+    "verbose": false
+  },
+  
+  /* ===================================
+   * Compiler Host Options
+   * =================================== */
+  "compileOnSave": false,
+  
+  /* ===================================
+   * MDX Support (if needed)
+   * =================================== */
+  "mdx": {
+    "checkMdx": false
+  }
+}
+  

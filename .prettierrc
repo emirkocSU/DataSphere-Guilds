@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "rangeStart": 0,
+  "rangeEnd": 999999999,
+  "requirePragma": false,
+  "insertPragma": false,
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "endOfLine": "auto",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": false,
+  "experimentalTernaries": false,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "semi": true,
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "bracketSameLine": false,
+        "singleAttributePerLine": true,
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": ["*.jsx", "*.js"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "semi": true,
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "bracketSameLine": false,
+        "parser": "babel"
+      }
+    },
+    {
+      "files": ["src/components/**/*.tsx", "src/screens/**/*.tsx"],
+      "options": {
+        "printWidth": 90,
+        "singleAttributePerLine": true,
+        "jsxSingleQuote": false,
+        "bracketSameLine": false
+      }
+    },
+    {
+      "files": ["src/state/**/*.ts", "src/api/**/*.ts", "src/services/**/*.ts"],
+      "options": {
+        "printWidth": 110,
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    },
+    {
+      "files": ["src/utils/**/*.ts", "src/hooks/**/*.ts"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "arrowParens": "always"
+      }
+    },
+    {
+      "files": ["*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx", "**/__tests__/**/*"],
+      "options": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "semi": true
+      }
+    },
+    {
+      "files": ["*.json", ".prettierrc", ".eslintrc", "tsconfig.json", "package.json"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "quoteProps": "preserve",
+        "trailingComma": "none",
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "proseWrap": "preserve",
+        "parser": "yaml"
+      }
+    },
+    {
+      "files": ["*.md", "*.mdx"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "proseWrap": "always",
+        "embeddedLanguageFormatting": "auto",
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": ["*.css", "*.scss", "*.sass", "*.less"],
+      "options": {
+        "printWidth": 100,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "semi": true,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "parser": "css"
+      }
+    },
+    {
+      "files": ["*.html", "*.htm"],
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "htmlWhitespaceSensitivity": "css",
+        "singleAttributePerLine": false,
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.xml", "*.svg"],
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "xmlWhitespaceSensitivity": "strict",
+        "parser": "xml"
+      }
+    },
+    {
+      "files": [".env*", "*.env"],
+      "options": {
+        "parser": "sh",
+        "useTabs": false,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.graphql", "*.gql"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "parser": "graphql"
+      }
+    },
+    {
+      "files": ["Dockerfile*", "*.dockerfile"],
+      "options": {
+        "tabWidth": 2,
+        "useTabs": false,
+        "parser": "dockerfile"
+      }
+    },
+    {
+      "files": [".gitignore", ".prettierignore", ".eslintignore"],
+      "options": {
+        "parser": "gitignore"
+      }
+    },
+    {
+      "files": ["*.sh", "*.bash", "*.zsh"],
+      "options": {
+        "parser": "sh",
+        "tabWidth": 2,
+        "useTabs": false,
+        "keepQuotes": true
+      }
+    },
+    {
+      "files": ["babel.config.js", "metro.config.js", "jest.config.js", ".eslintrc.js"],
+      "options": {
+        "printWidth": 100,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "semi": true,
+        "parser": "babel"
+      }
+    },
+    {
+      "files": ["app.json", "eas.json"],
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["src/i18n/**/*.json"],
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "parser": "json",
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["ios/**/*", "android/**/*"],
+      "options": {
+        "requirePragma": true
+      }
+    }
+  ],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "importOrder": [
+    "^react$",
+    "^react-native$",
+    "^expo",
+    "^@expo",
+    "^@react-navigation",
+    "^@reduxjs",
+    "<THIRD_PARTY_MODULES>",
+    "^@(assets|components|contexts|hooks|i18n|models|navigation|screens|services|state|api|utils|types)/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true,
+  "importOrderCaseInsensitive": true
+}

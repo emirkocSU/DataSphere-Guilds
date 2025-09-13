@@ -1,0 +1,7 @@
+{
+  "name": "@datasphere/prettier-config",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.json",
+  "license": "MIT"
+}

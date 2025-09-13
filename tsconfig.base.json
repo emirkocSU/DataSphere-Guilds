@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@datasphere/core/*": ["packages/@datasphere/core/*"],
+      "@datasphere/eslint-config": ["packages/@datasphere/eslint-config/index.js"],
+      "@datasphere/prettier-config": ["packages/@datasphere/prettier-config/index.json"],
+      "@datasphere/tsconfig": ["packages/@datasphere/tsconfig/base.json"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
