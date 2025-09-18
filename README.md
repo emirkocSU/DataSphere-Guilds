@@ -10,7 +10,7 @@
 
 **Mission:** *Build the world’s first truly decentralized data marketplace that combines human intelligence with AI to achieve enterprise-grade quality at scale. My mission is to empower the global crowd with tools, training, and fair economics, while ensuring organizations get AI-ready data of the highest quality through a multi-layer validation pipeline.*
 
-**Goal:** *1M+ active data workers across 50+ countries by 2027, elevating global data quality and economic opportunity.*
+**Goal:** *Active data workers across 50+ countries by 2027, elevating global data quality and economic opportunity.*
 
 ---
 
